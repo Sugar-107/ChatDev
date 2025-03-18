@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
   <diagram name="第 1 页" id="f_q8jonJGMMDb7uvusDS">
-    <mxGraphModel dx="2954" dy="1098" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -231,6 +231,312 @@
         </mxCell>
         <mxCell id="v4V2bk7UrZ35Li7XXG10-51" value="• StarRocks：支持Runtime Filter进一步优化" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="380" y="715" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-52" value="StarRocks的Broadcast Join实现原理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="164" y="30" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-53" value="Broadcast Join：小表被广播到所有节点，与大表进行本地连接，适用于一大一小表连接场景" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="590" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-54" value="计算节点 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-55" value="大表分片 1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-56" value="小表完整副本" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="180" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-57" value="本地Join" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-58" value="结果 1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="150" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-59" value="计算节点 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-60" value="大表分片 2" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="360" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-61" value="小表完整副本" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-62" value="本地Join" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="360" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-63" value="结果 2" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="370" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-64" value="计算节点 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="140" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-65" value="大表分片 3" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="580" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-66" value="小表完整副本" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="200" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-67" value="本地Join" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="580" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-68" value="结果 3" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="590" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-69" value="结果合并" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="440" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-70" value="最终Join结果" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-71" value="FE节点 (协调者)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="600" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-72" value="原始小表" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="144" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-73" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-55" target="v4V2bk7UrZ35Li7XXG10-57" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-74" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-56" target="v4V2bk7UrZ35Li7XXG10-57" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="270" as="sourcePoint" />
+            <mxPoint x="180" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-75" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-57" target="v4V2bk7UrZ35Li7XXG10-58" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="270" as="sourcePoint" />
+            <mxPoint x="180" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-76" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-60" target="v4V2bk7UrZ35Li7XXG10-62" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="270" as="sourcePoint" />
+            <mxPoint x="180" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-77" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-61" target="v4V2bk7UrZ35Li7XXG10-62" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="270" as="sourcePoint" />
+            <mxPoint x="400" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-78" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-62" target="v4V2bk7UrZ35Li7XXG10-63" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="270" as="sourcePoint" />
+            <mxPoint x="400" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-79" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-65" target="v4V2bk7UrZ35Li7XXG10-67" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="270" as="sourcePoint" />
+            <mxPoint x="400" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-80" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-66" target="v4V2bk7UrZ35Li7XXG10-67" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="270" as="sourcePoint" />
+            <mxPoint x="620" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-81" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-67" target="v4V2bk7UrZ35Li7XXG10-68" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="270" as="sourcePoint" />
+            <mxPoint x="620" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-82" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;edgeStyle=orthogonalEdgeStyle;" edge="1" source="v4V2bk7UrZ35Li7XXG10-58" target="v4V2bk7UrZ35Li7XXG10-69" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="410" />
+              <mxPoint x="310" y="410" />
+              <mxPoint x="310" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-83" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-63" target="v4V2bk7UrZ35Li7XXG10-69" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-84" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;edgeStyle=orthogonalEdgeStyle;" edge="1" source="v4V2bk7UrZ35Li7XXG10-68" target="v4V2bk7UrZ35Li7XXG10-69" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="410" />
+              <mxPoint x="530" y="410" />
+              <mxPoint x="530" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-85" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;" edge="1" source="v4V2bk7UrZ35Li7XXG10-69" target="v4V2bk7UrZ35Li7XXG10-70" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-86" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;jumpStyle=arc;jumpSize=6;edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" source="v4V2bk7UrZ35Li7XXG10-72" target="v4V2bk7UrZ35Li7XXG10-56" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="204" y="400" />
+              <mxPoint x="220" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-87" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;jumpStyle=arc;jumpSize=6;edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" source="v4V2bk7UrZ35Li7XXG10-72" target="v4V2bk7UrZ35Li7XXG10-61" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="204" y="400" />
+              <mxPoint x="440" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-88" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;jumpStyle=arc;jumpSize=6;edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" source="v4V2bk7UrZ35Li7XXG10-72" target="v4V2bk7UrZ35Li7XXG10-66" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="204" y="400" />
+              <mxPoint x="660" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-89" value="小表广播" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontStyle=1;fontColor=#b85450;" vertex="1" connectable="0" parent="v4V2bk7UrZ35Li7XXG10-88">
+          <mxGeometry x="0.1257" y="-2" relative="1" as="geometry">
+            <mxPoint x="-126" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-90" value="" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=6;strokeColor=#9673a6;strokeWidth=2;" edge="1" source="v4V2bk7UrZ35Li7XXG10-71" target="v4V2bk7UrZ35Li7XXG10-70" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="320" as="sourcePoint" />
+            <mxPoint x="440" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-91" value="StarRocks Broadcast Join特性" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="440" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-92" value="1. 小表完整广播到所有节点" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="480" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-93" value="2. 大表分片保持不动" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="510" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-94" value="3. 各节点并行执行本地Join" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-95" value="4. 合并各节点Join结果" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="570" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-96" value="5. 配合Runtime Filter效率更高" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="600" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-97" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontColor=#333333;dashed=1;strokeWidth=1;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="130" y="660" width="590" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-98" value="Broadcast Join优势" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="310" y="670" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-99" value="• 减少数据移动：只需移动小表数据，大表数据保持原位" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="695" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-100" value="• 并行计算：所有节点同时执行Join操作" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="715" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-101" value="• 适用场景：小表可放入内存，大表数据量大" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="695" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-102" value="• StarRocks：支持Runtime Filter进一步优化" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="715" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-103" value="StarRocks与Spark Broadcast Join对比" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="210" y="770" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-104" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f7ed;strokeColor=#36393d;fontSize=12;dashed=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="810" width="590" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-105" value="特性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="820" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-106" value="StarRocks Broadcast Join" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="820" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-107" value="Spark Broadcast Join" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="820" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-108" value="Runtime Filter" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="860" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-109" value="支持，可以在Join前过滤不满足条件的数据，大幅减少处理数据量" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="860" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-110" value="不支持，需要扫描所有数据再进行Join操作" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="860" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-111" value="执行模型" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="900" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-112" value="Pipeline执行模型，数据流式处理，避免中间结果物化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="900" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-113" value="Stage执行模型，每个阶段需要等待前一阶段完成，中间结果需要物化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="900" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-114" value="广播阈值设置" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="940" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-115" value="根据内存估算动态选择，且考虑执行节点内存情况" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="940" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-116" value="默认固定阈值(10MB)，可通过spark.sql.autoBroadcastJoinThreshold参数调整" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="940" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-117" value="Join策略选择" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="980" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-118" value="CBO优化器，考虑多种因素，自动选择最优Join策略" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="980" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-119" value="基于表大小和配置阈值，策略选择相对简单" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="980" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-120" value="小表处理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1020" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-121" value="可以构建高效哈希表，支持细粒度的内存管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1020" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-122" value="使用标准哈希表，可能占用更多内存" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1020" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-123" value="性能优化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1060" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-124" value="支持SIMD指令集加速、内存预分配、向量化执行" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1060" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-125" value="通用优化，无OLAP场景特定优化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1060" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-126" value="结论：StarRocks的Broadcast Join在OLAP场景表现更优" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="130" y="1150" width="590" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-127" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;dashed=0;strokeWidth=1;opacity=90;" vertex="1" parent="1">
+          <mxGeometry x="130" y="1190" width="590" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v4V2bk7UrZ35Li7XXG10-128" value="StarRocks针对OLAP场景专门优化了Broadcast Join，通过Runtime Filter、Pipeline执行模型和向量化技术，实现了比Spark更高效的Join操作。特别是在大规模数据分析场景中，StarRocks的优势更为明显。使用StarRocks可以显著减少因Join带来的计算资源消耗和查询时延。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;spacingLeft=10;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1195" width="570" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
